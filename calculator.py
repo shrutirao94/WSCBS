@@ -1,10 +1,10 @@
 class Calculator:
-    def __init__(self, input1,  input2)
-    self.input1 = input1
-    self.input2 = input2
+    def __init__(self, x,  y):
+        self.x = x
+        self.y = y
 
-    def add(x, y):
-        return x.input1 + y.input2
+    def add(self):
+        return self.x + self.y
 
     def sub(x, y):
         return x.input1 - y.input2
@@ -16,5 +16,5 @@ class Calculator:
         return x.input1  / y.input2
 
 
-   calc_sum = Calculator(1, 2)
-   calc_sum.add()
+calc_sum = Calculator(1, 2)
+print(calc_sum.add())
