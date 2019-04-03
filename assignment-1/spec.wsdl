@@ -1,0 +1,118 @@
+<definitions name = "CalculatorService"
+  targetNamespace = "http://www.examples.com/wsdl/CalculatorService.wsdl"
+
+  xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:tns = "http://www.examples.com/wsdl/CalculatorService.wsdl"
+  xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
+
+  <message name = "CalculatorRequest">
+    <part name = "x" type = "xsd:string"/>
+    <part name = "y" type = "xsd:string"/>
+  </message>
+
+  <message name = "CalculatorResponse">
+    <part name = "result" type = "xsd:string"/>
+  </message>
+
+  <portType name = "CalculatorPortType">
+    <operation name = "Add">
+      <input message = "tns:CalculatorRequest"/>
+      <output message = "tns:CalculatorResponse"/>
+    </operation>
+
+    <operation name = "Sub">
+      <input message = "tns:CalculatorRequest"/>
+      <output message = "tns:CalculatorResponse"/>
+    </operation>
+
+    <operation name = "Mul">
+      <input message = "tns:CalculatorRequest"/>
+      <output message = "tns:CalculatorResponse"/>
+    </operation>
+
+    <operation name = "Div">
+      <input message = "tns:CalculatorRequest"/>
+      <output message = "tns:CalculatorResponse"/>
+    </operation>
+  </portType>
+
+  <binding name = "CalculatorBinding" type = "tns:CalculatorPortType">
+    <soap:binding style = "rpc"
+      transport = "http://schemas.xmlsoap.org/soap/http"/>
+    <operation name = "Add">
+      <soap:operation soapAction = "Add"/>
+      <input>
+        <soap:body
+          encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+          namespace = "urn:examples:calculatorservice"
+          use = "encoded"/>
+      </input>
+
+      <output>
+        <soap:body
+          encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+          namespace = "urn:examples:calculatorservice"
+          use = "encoded"/>
+      </output>
+    </operation>
+
+    <operation name = "Sub">
+      <soap:operation soapAction = "Sub"/>
+      <input>
+        <soap:body
+          encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+          namespace = "urn:examples:calculatorservice"
+          use = "encoded"/>
+      </input>
+
+      <output>
+        <soap:body
+          encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+          namespace = "urn:examples:calculatorservice"
+          use = "encoded"/>
+      </output>
+    </operation>
+
+    <operation name = "Mul">
+      <soap:operation soapAction = "Mul"/>
+      <input>
+        <soap:body
+          encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+          namespace = "urn:examples:calculatorservice"
+          use = "encoded"/>
+      </input>
+
+      <output>
+        <soap:body
+          encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+          namespace = "urn:examples:calculatorservice"
+          use = "encoded"/>
+      </output>
+    </operation>
+
+    <operation name = "Div">
+      <soap:operation soapAction = "Div"/>
+      <input>
+        <soap:body
+          encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+          namespace = "urn:examples:calculatorservice"
+          use = "encoded"/>
+      </input>
+
+      <output>
+        <soap:body
+          encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+          namespace = "urn:examples:calculatorservice"
+          use = "encoded"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name = "CalculatorService">
+    <documentation>WSDL File for CalculatorService</documentation>
+    <port binding = "tns:CalculatorBinding" name = "CalculatorPort">
+      <soap:address
+        location = "http://localhost:8080/spec" />
+    </port>
+  </service>
+</definitions>
