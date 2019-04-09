@@ -1,21 +1,35 @@
 const  soap = require('soap');
 const url = 'http://localhost:8080/spec?wsdl';
-const args = { x: process.argv [2], y: process.argv[3] }
+const args = { command: process.argv[2], x: process.argv [3], y: process.argv[4] } 
 
 soap.createClient(url, function(err, client) {
-  client.Add(args, function(err, res) {
-    console.log(res.result);
-  })
+  switch (args.command) {
+    default:
+      console.log("No command found! Please specify add, sub, mul or div!")
+      break;
 
-  client.Sub(args, function(err, res) {
-    console.log(res.result);
-  })
+    case "add":
+      client.Add(args, function(err, res) { 
+        console.log(res.result); 
+      })
+      break;
 
-  client.Mul(args, function(err, res) {
-    console.log(res.result);
-  })
+    case "sub":
+      client.Sub(args, function(err, res) {
+        console.log(res.result); 
+      })
+      break;
 
-  client.Div(args, function(err, res) {
-    console.log(res.result);
-  })
+    case "mul":
+      client.Mul(args, function(err, res) {
+        console.log(res.result); 
+      })
+      break;
+    
+    case "div":
+      client.Div(args, function(err, res) { 
+        console.log(res.result); 
+      })
+      break;
+  }
 });
