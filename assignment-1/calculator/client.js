@@ -1,7 +1,6 @@
-var soap = require('soap');
-var url = 'http://localhost:8080/spec?wsdl';
-// var args = { "x": "4", "y": "6" };
-var args = { x: "7.5", y: "0" };
+const  soap = require('soap');
+const url = 'http://localhost:8080/spec?wsdl';
+const args = { x: process.argv [2], y: process.argv[3] }
 
 soap.createClient(url, function(err, client) {
   client.Add(args, function(err, res) {
