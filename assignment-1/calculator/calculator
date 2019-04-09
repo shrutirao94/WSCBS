@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const  soap = require('soap');
 const url = 'http://localhost:8080/spec?wsdl';
 const args = { command: process.argv[2], x: process.argv [3], y: process.argv[4] } 
