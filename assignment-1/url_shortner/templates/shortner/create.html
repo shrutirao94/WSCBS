@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}New Url{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  <label for="url">Url</label>
+  <input name="url" id="url" required>
+
+  <input type="submit" value="Register">
+</form>
+{% endblock %}

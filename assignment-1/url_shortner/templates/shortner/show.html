@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}{{ url['id'] }} : {{ url['url_short'] }}{% endblock %}</h1>
+    <a class="action" href="{{ url_for('shortner.index') }}">Index</a>
+{% endblock %}
+
+{% block content %}
+<p>Url: {{ url['url_full'] }}</p>
+{% endblock %}
