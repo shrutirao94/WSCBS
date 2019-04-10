@@ -20,4 +20,13 @@ Please note that any changes to server.js or spec.wsdl requires the server to be
 1. Make sure you have python 3.7 and [pipenv](https://pipenv.readthedocs.io/en/latest/) installed
 2. `cd` into the *url_shortner* directory and run pipenv install
 3. run `flask init-db` to initialize the database
-4. run `flask run` to start the server
+4. export the `FLASK_APP` and `FLASK_ENVIRONMENT` env variables (this will depend on your os and shell). For example, on Linux/OSX and using bash/zsh you can run:
+
+```
+export FLASK_APP=url_shortner
+export FLASK_ENVIRONMENT=development
+```
+
+You can consult [this page](http://flask.pocoo.org/docs/1.0/tutorial/factory/) for more information.
+
+5. `cd` to *assignment-1* directory (one level up) and run `flask run` to start the server
