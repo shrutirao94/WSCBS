@@ -1,0 +1,19 @@
+NAME = group_13_test_init
+CPU = 1
+VCPU = 2
+MEMORY = 512
+DISK = [
+IMAGE_ID = 1080,
+DRIVER = "qcow2"
+]
+NIC = [NETWORK_ID = 1]
+OS = [ARCH="x86_64"]
+GRAPHICS = [
+TYPE = "vnc",
+LISTEN = "0.0.0.0"
+]
+CONTEXT = [
+NETWORK = "yes",
+SSH_PUBLIC_KEY = "$USER[SSH_PUBLIC_KEY]",
+FILES = "/var/scratch/wscs1906/WSCBS/assignment-1/url_shortner /var/scratch/wscs1906/init.sh"
+]
